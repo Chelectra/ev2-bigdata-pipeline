@@ -1,0 +1,27 @@
+# =====================================================================
+# ARCHIVO .gitignore - SEGURIDAD IAM Y EXCLUSIÓN DE DATOS MASIVOS
+# =====================================================================
+
+# 1. Excluir credenciales de AWS IAM y variables de entorno (Criterio 2.1.2)
+.env
+*.pem
+*.key
+*credentials*
+*accessKeys.csv
+aws_keys.json
+
+# 2. Excluir archivos locales del Data Lake y particiones Parquet pesadas
+datalake/
+*.parquet
+*.snappy.parquet
+*.crc
+_SUCCESS
+spark-warehouse/
+metastore_db/
+derby.log
+
+# 3. Excluir archivos temporales de Python y Jupyter/Colab
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
