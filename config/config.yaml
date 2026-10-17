@@ -1,0 +1,31 @@
+project:
+  name: "EV2 Big Data High Availability Pipeline"
+  course: "TI3025 - Big Data"
+  institution: "INACAP Sede Punta Arenas"
+  authors:
+    - "Ricardo Cayupel"
+    - "Lorenzo Aguila"
+
+aws:
+  region: "us-east-1"
+  s3_bucket: "ev2-bigdata-cayupel-aguila-2026"
+  iam_user: "bigdata-user"
+  raw_zone_prefix: "raw"
+  curated_zone_prefix: "curated/nyc_trips"
+  athena_database: "db_ev2_bigdata"
+  athena_table: "nyc_trips_curated"
+
+spark:
+  app_name: "EV2_BigData_AWS_Pipeline_Cayupel_Aguila"
+  parquet_compression: "snappy"
+  partition_column: "payment_type_str"
+  sample_fraction: 0.05
+  random_seed: 42
+
+ml_model:
+  algorithm: "RandomForestRegressor"
+  target_column: "fare_amount"
+  train_split: 0.8
+  test_split: 0.2
+  num_trees: 50
+  max_depth: 8
