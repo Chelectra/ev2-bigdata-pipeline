@@ -26,8 +26,8 @@ Repositorio oficial del proyecto correspondiente a la **Evaluación Sumativa 02 
 ev2-bigdata-pipeline-aws/
 ├── config/
 │   └── config.yaml                  # Parámetros de AWS S3, PySpark y Machine Learning
-├── notebooks/
-│   └── EV2_BigData_Pipeline.ipynb   # Notebook interactivo ejecutado en Google Colab
+├── EV2_BigData_Pipeline.ipynb   # Notebook interactivo ejecutado en Google Colab
+│    
 ├── sql/
 │   └── athena_queries.sql           # Consultas DDL y analíticas para Amazon Athena
 ├── src/
