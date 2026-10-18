@@ -47,7 +47,7 @@ def init_aws_and_spark():
     aws_access_key = getpass("Ingresa tu AWS Access Key ID (ej. AKIAX5UZYCO6IPSAWOOG): ")
     aws_secret_key = getpass("Ingresa tu AWS Secret Access Key: ")
     aws_region = "us-east-1"
-    s3_bucket = "ev2-bigdata-cayupel-aguila-2026"
+    s3_bucket = "ev2-bigdata-cayupel-aguila"
 
     s3_client = boto3.client(
         "s3",
@@ -71,7 +71,7 @@ def ingest_raw_data(s3_client, s3_bucket, spark):
     Descarga el dataset de viajes en taxi de NYC y lo respalda en la Zona Raw
     (Bronce) del Data Lake en Amazon S3 (Criterio 2.1.1 y 2.1.2).
     """
-    print("\n📥 [PASO 2] Ejecutando Capa de Ingesta Batch hacia Amazon S3...")
+    print("\n[PASO 2] Ejecutando Capa de Ingesta Batch hacia Amazon S3...")
     os.makedirs("datalake/raw", exist_ok=True)
     os.makedirs("datalake/curated", exist_ok=True)
 
@@ -215,7 +215,7 @@ def run_predictive_model(df_curated):
     Construye, entrena y evalúa el modelo predictivo RandomForestRegressor
     utilizando un Pipeline de pyspark.ml (Criterio 2.1.3).
     """
-    print("\n🤖 [PASO 5] Entrenando Modelo Predictivo Distribuido con pyspark.ml...")
+    print("\n[PASO 5] Entrenando Modelo Predictivo Distribuido con pyspark.ml...")
     train_df, test_df = df_curated.randomSplit([0.8, 0.2], seed=42)
 
     # 1. Imputación de valores nulos con la mediana
