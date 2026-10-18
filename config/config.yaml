@@ -8,7 +8,7 @@ project:
 
 aws:
   region: "us-east-1"
-  s3_bucket: "ev2-bigdata-cayupel-aguila-2026"
+  s3_bucket: "ev2-bigdata-cayupel-aguila"
   iam_user: "bigdata-user"
   raw_zone_prefix: "raw"
   curated_zone_prefix: "curated/nyc_trips"
